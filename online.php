@@ -1,15 +1,15 @@
 <?
 
+include "function.php";
+
 session_start();
-if (isset($_SESSION['login']))
+if (!(isset($_SESSION['login'])))
 {
     echo "<script language=javascript>"; 
-	echo "window.open('online.php', '_parent', '')"; 
+	echo "window.open('index.php', '_parent', '')"; 
 	echo "</script> "; 
     exit;
 }
-
-$_SESSION['form'] = "";
 
 ?> 
 
@@ -29,11 +29,10 @@ $_SESSION['form'] = "";
 <b>Schrauben-Handel</b>
 <div class="bannerlinks"></div>
 <div class="bannerrechts"></div>
-<a class="button03" href="registrieren.php" target="contentbelegarbeit"><b>Registrieren</b></a>
-<a class="button04" href="login.php" target="contentbelegarbeit"><b>Login</b></a>
+<a class="button03" href="account.php" target="contentbelegarbeit"><b>Account</b></a>
+<a class="button04" href="offline.php" target="contentbelegarbeit"><b>Logout</b></a>
+<div class="username"><b><?echo $_SESSION['username'];?></b></div>
 </div>
-
-
 
 <div class="sidebar">
 <a class="button01" href="startseite.php" target="contentbelegarbeit">Startseite</a>
